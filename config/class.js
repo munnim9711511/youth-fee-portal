@@ -9,5 +9,5 @@ var classInfo = new Schema({
     class_instructer: String
 });
 
-var classInfoData = classInfo;
+var classInfoData = mongoose.model('class',classInfo);
 module.exports = classInfoData;

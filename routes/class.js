@@ -17,7 +17,7 @@ router.get('/class-data', function (req, res, next) {
 
 });
 router.post('/upload-class', (req, res, next) => {
-
+    // console.log(req.body);
     var classIn = new classDB({
         class_type: req.body.classType,
         class_capacity: req.body.classCapacity,
@@ -41,7 +41,7 @@ router.post('/update-user', (req, res, next) => {
                 "class_type": req.body.classType,
                 "class_capacity": req.body.classCapacity,
                 "days_of_the_week": req.body.daysClass,
-                " class_instructer": req.body.instructer
+                "class_instructer": req.body.instructer
             }
         }).exec((err, data) => {
             if (err) {

@@ -12,5 +12,5 @@ var fee = new Schema({
     fine_payment:Number,
 
 });
-var feeData = fee;
+var feeData = mongoose.model('fee',fee);
 module.exports =feeData;

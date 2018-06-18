@@ -15,5 +15,5 @@ var instructer = new Schema({
     photo_location: String
 
 });
-var instructerInfo = instructer;
+var instructerInfo = mongoose.model('instructer',instructer);
 module.exports = instructerInfo;

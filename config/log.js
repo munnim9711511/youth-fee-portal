@@ -7,5 +7,5 @@ var loginfo = Schema({
     staff:String,
     opperation:String
 });
-var logData = loginfo;
+var logData = mongoose.model('log',loginfo);
 module.exports = logData;

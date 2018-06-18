@@ -1,16 +1,48 @@
 var express = require('express');
 var router = express.Router();
+var client = require('../config/client');
 
-router.get('/client-data', function(req, res, next) {
+
+
+router.get('/client-data', function (req, res, next) {
+
+  client.find({}).exec((err, data) => {
+    if (err) {
+      return err;
+    } else {
+      res.send(data);
+    }
+  })
 
 });
-router.post('/upload-client',(req,res,next)=>{
+router.post('/upload-client', (req, res, next) => {
+
+  var client = new client({
+    first_name: req.body.fname,
+    last_name: req.body.lname,
+    id_card_number: req.body.idcrad,
+    address: req.body.address,
+    contact_number: req.body.contactNumber,
+    emergency_contact_number: req.body.emnumber,
+    job_status: req.body.jobStatus,
+    date_of_birth: req.body.DOB,
+    health_issue: req.body.healthBody,
+    blood_group: req.body.bloodGroup,
+    class_attend: req.body.classAttend,
+    photo_location: ""
+  });
+  classIn.save((err) => {
+    if (err) {
+      res.send("data saving erro")
+    }
+    res.send('class uploaded');
+  });
 
 });
-router.post('/update-client',(req,res,next)=>{
+router.post('/update-client', (req, res, next) => {
 
 });
-router.post('/del-client',(req,res,next)=>{
+router.post('/del-client', (req, res, next) => {
 
 });
 module.exports = router;

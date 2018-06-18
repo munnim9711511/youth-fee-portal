@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var client = new Schema({
     first_name: String,
     last_name: String,
-    id_cared_number:String,
+    id_card_number:String,
     address: String,
     contact_number: String,
     emergency_contact_number: String,
@@ -16,5 +16,5 @@ var client = new Schema({
     photo_location:String
 });
 
-var clientInfo = client;
+var clientInfo = mongoose.model('client',client);
 module.exports = clientInfo;

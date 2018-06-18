@@ -16,6 +16,7 @@ var feeRouter = require('./routes/fee');
 var classRouter = require('./routes/class');
 var authRouter = require('./routes/auth');
 var attendenceRouter = require('./routes/attendence');
+var adminRouter = require('./routes/admin');
 
 var app = express();
 
@@ -25,7 +26,9 @@ app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -37,6 +40,7 @@ app.use('/client', clientRouter);
 app.use('/fee', feeRouter);
 app.use('/instructer', instructerRouter);
 app.use('/attendence', attendenceRouter);
+app.use('/admin',adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

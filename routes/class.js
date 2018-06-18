@@ -3,6 +3,9 @@ var router = express.Router();
 
 var classDB = require('../config/class');
 
+router.get('/panel',(req,res,next)=>{
+    res.render('class', { title: 'Express' });
+});
 
 router.get('/class-data', function (req, res, next) {
 

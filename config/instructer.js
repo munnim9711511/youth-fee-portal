@@ -6,7 +6,7 @@ var instructer = new Schema({
     firstname: String,
     last_name: String,
     date_birth: String,
-    id_cared_number: String,
+    id_card_number: String,
     blood_group: String,
     contact_number: Strng,
     emergency_contact_number: String,

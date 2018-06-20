@@ -1,27 +1,36 @@
-<div class="boarder">
+<div class="boarder #880e4f pink darken-4">
     <h5>Class Panel</h5>
 </div>
 
-
-
+<div ng-app="classApp" >
 <ul id="slide-out" class="sidenav">
   
     <li>
         <a class="subheader">Class Managment</a>
     </li>
+   <li>
+        <a class="waves-effect" ng-href="#!">Create Class</a>
+    </li>
+     <li>
+        <a class="waves-effect" ng-href="#!/update-class">Update Class</a>
+    </li>
+     <li>
+        <a class="waves-effect" ng-href="#!/delet-class">Delet Class</a>
+    </li>
+     <li>
+        <a class="waves-effect" ng-href="#!/class">Class data</a>
+    </li>
     <li>
-        <a class="waves-effect" href="#!">Third Link With Waves</a>
-    </li>
-     <li>
-        <a class="waves-effect" href="#!">Third Link With Waves</a>
-    </li>
-     <li>
-        <a class="waves-effect" href="#!">Third Link With Waves</a>
-    </li>
-     <li>
-        <a class="waves-effect" href="#!">Third Link With Waves</a>
+        <a class="waves-effect" href="#!">Logout</a>
     </li>
 </ul>
 <a href="#" data-target="slide-out" class="sidenav-trigger">
     <i class="material-icons">menu</i>
 </a>
+<div class="container">
+<div ng-view></div>
+</div>
+
+
+</div>
+

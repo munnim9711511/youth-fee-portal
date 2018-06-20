@@ -26,6 +26,37 @@ router.post('/upload-instructer', (req, res, next) => {
     address: req.body.address,
     instructer_filed: req.body.instruxterQ,
     photo_location: ""
+  });
+});
+
+router.get('/panel',(req,res,next)=>{
+  res.render('instructer', { title: 'Express' });
+});
+
+
+router.get('/instructer-data', function (req, res, next) {
+  instructer.find({}).exec((err, data) => {
+    if (err) {
+      return err;
+    } else {
+      res.send(data);
+    }
+  });
+});
+router.post('/upload-instructer', (req, res, next) => {
+
+  var instructerDB = new instructer({
+
+    firstname: req.body.fname,
+    last_name: req.body.lname,
+    date_birth: req.body.DOB,
+    id_card_number: req.body.idCard,
+    blood_group: req.body.bloodG,
+    contact_number: req.body.cNumber,
+    emergency_contact_number: eNumber,
+    address: req.body.address,
+    instructer_filed: req.body.instruxterQ,
+    photo_location: ""
 
 
   });

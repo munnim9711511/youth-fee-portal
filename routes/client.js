@@ -3,6 +3,10 @@ var router = express.Router();
 var client = require('../config/client');
 
 
+router.get('/panel',(req,res,next)=>{
+  res.render('client', { title: 'client' });
+});
+
 
 router.get('/client-data', function (req, res, next) {
 

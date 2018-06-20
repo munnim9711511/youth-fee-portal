@@ -2,6 +2,11 @@ var express = require('express');
 var router = express.Router();
 var fee = require('../config/free');
 
+
+router.get('/panel',(req,res,next)=>{
+  res.render('fee', { title: 'client' });
+});
+
 router.get('/fee-data', function (req, res, next) {
   fee.find({}).exec((err, data) => {
     if (err) {

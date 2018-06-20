@@ -1,0 +1,77 @@
+<h4>Create Class</h4>
+<hr>
+<div class="container" ng-controller="classCTL">
+    <form  ng-submit="submitClass(data)">
+        <div class="row">
+            <div class="input-field col m8">
+                <input type="text" name="" id="" ng-model="data.name">
+                <label for="">
+                    class name
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col m8">
+                <input type="number" name="" id="" ng-model="data.capacity">
+                <label for="">
+                    class capacity
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col m8">
+                <select multiple ng-model="data.days">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="2">Sunday</option>
+                    <option value="3">Monday</option>
+                    <option value="3">Tuesday</option>
+                    <option value="3">Wednesday</option>
+                    <option value="3">Thursday</option>
+                    <option value="3">Friday</option>
+                </select>
+                <label for="">
+                    days of the week
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col m8">
+                <input type="text" class="timepicker">
+                <label for="">
+                    time
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col m8">
+                <select multiple>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Saturday</option>
+                    <option value="2">Sunday</option>
+                    <option value="3">Monday</option>
+                    <option value="3">Tuesday</option>
+                    <option value="3">Wednesday</option>
+                    <option value="3">Thursday</option>
+                    <option value="3">Friday</option>
+                </select>
+                <label for="">
+                    instructer
+                </label>
+            </div>
+        </div>
+        <div>
+            <input type="submit" value="upload" class="btn">
+        </div>
+    </form>
+</div>
+<br>
+
+
+<script>
+
+    $(document).ready(function () {
+        $('select').formSelect();
+        $('.timepicker').timepicker();
+    });
+</script>
